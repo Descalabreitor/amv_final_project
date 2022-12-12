@@ -52,7 +52,7 @@ _C.LOSS.LL_IOU_GAIN = 0.2 # lane line iou loss gain
 _C.DATASET = CN(new_allowed=True)
 _C.DATASET.DATAROOT = '/content/drive/MyDrive/AML/Final_proyect/Data/images'       # the path of images folder
 _C.DATASET.LABELROOT = '/content/drive/MyDrive/AML/Final_proyect/Data/det_annotations'      # the path of det_annotations folder
-_C.DATASET.MASKROOT = '/content/drive/MyDrive/AML/Final_proyect/Data/da_seg_annontations'                # the path of da_seg_annotations folder
+_C.DATASET.MASKROOT = '/content/drive/MyDrive/AML/Final_proyect/Data/da_seg_annotations'                # the path of da_seg_annotations folder
 _C.DATASET.LANEROOT = '/content/drive/MyDrive/AML/Final_proyect/Data/ll_seg_anotations'               # the path of ll_seg_annotations folder
 _C.DATASET.DATASET = 'BddDataset'
 _C.DATASET.TRAIN_SET = 'train'
