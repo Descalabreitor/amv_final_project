@@ -1,0 +1,3 @@
+[submodule "original_model"]
+	path = original_model
+	url = https://github.com/hustvl/YOLOP.git
