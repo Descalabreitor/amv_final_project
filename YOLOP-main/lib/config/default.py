@@ -6,7 +6,7 @@ _C = CN()
 
 _C.LOG_DIR = 'runs/'
 _C.GPUS = (0,1)     
-_C.WORKERS = 1
+_C.WORKERS = 8
 _C.PIN_MEMORY = False
 _C.PRINT_FREQ = 20
 _C.AUTO_RESUME =False       # Resume from the last training interrupt
@@ -107,7 +107,7 @@ _C.TRAIN.ENC_SEG_ONLY = False       # Only train encoder and two segmentation br
 _C.TRAIN.ENC_DET_ONLY = False       # Only train encoder and detection branch
 
 # Single task 
-_C.TRAIN.DRIVABLE_ONLY = False      # Only train da_segmentation task
+_C.TRAIN.DRIVABLE_ONLY = True     # Only train da_segmentation task
 _C.TRAIN.LANE_ONLY = False          # Only train ll_segmentation task
 _C.TRAIN.DET_ONLY = False          # Only train detection task
 
