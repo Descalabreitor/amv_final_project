@@ -1,4 +1,5 @@
 # Interface to modify from colab the models and hyperparameters for easier experiments 
-class colab_basecode_conector:
+def update_network_params(img_size = [640, 640]):
+    
 
-    def change_preprocessing
+def update_loss_params():

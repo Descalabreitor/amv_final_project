@@ -6,7 +6,7 @@ _C = CN()
 
 _C.LOG_DIR = 'runs/'
 _C.GPUS = (0,1)     
-_C.WORKERS = 8
+_C.WORKERS = 1
 _C.PIN_MEMORY = False
 _C.PRINT_FREQ = 20
 _C.AUTO_RESUME =False       # Resume from the last training interrupt
