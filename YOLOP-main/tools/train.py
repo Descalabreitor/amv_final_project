@@ -244,7 +244,7 @@ def main():
         # model = torch.nn.DataParallel(model, device_ids=cfg.GPUS).cuda()
     # # DDP mode
     if rank != -1:
-        model = DDP(model, device_ids=[args.local_rank], output_device=args.local_rank,find_unused_parameters=True)
+        model = DDP(model, device_ids=[args.local_rank], output_device=args.local_rank, find_unused_parameters=True)
 
 
     # assign model params
