@@ -1,5 +1,6 @@
 from lib.config import cfg
 import torchvision.transforms as transforms
+import lib.dataset as dataset
 
 def main():
 
@@ -20,7 +21,7 @@ def main():
         ])
     )
 
-    print(type(train_datset))
+    print(type(train_dataset))
 
     valid_dataset = eval('dataset.' + cfg.DATASET.DATASET)(
             cfg=cfg,
@@ -32,7 +33,7 @@ def main():
             ])
         )
     
-    print(type(valid_datset))
+    print(type(valid_dataset))
 
 if __name__ == '__main__':
     main()
