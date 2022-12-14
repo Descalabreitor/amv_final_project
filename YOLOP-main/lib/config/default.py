@@ -49,7 +49,7 @@ _C.DATASET = CN(new_allowed=True)
 # Actualizar los directorios
 _C.DATASET.DATAROOT = '/home/kiara/Descargas/Data/images'  # the path of images folder
 _C.DATASET.LABELROOT = '/home/kiara/Descargas/Data/det_annotations'  # the path of det_annotations folder
-_C.DATASET.MASKROOT = '/home/kiara/Descargas/Data/drivable_area_colormaps'  # the path of da_seg_annotations folder
+_C.DATASET.MASKROOT = '/home/kiara/Descargas/Data/colormaps'  # the path of da_seg_annotations folder
 _C.DATASET.LANEROOT = '/home/kiara/Descargas/Data/ll_seg_anotations'  # the path of ll_seg_annotations folder
 _C.DATASET.DATASET = 'BddDataset'
 _C.DATASET.TRAIN_SET = 'train'
