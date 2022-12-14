@@ -1,0 +1,96 @@
+AUTO_RESUME: false
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+DATASET:
+  COLOR_RGB: false
+  DATAROOT: /home/kiara/Descargas/Data/images
+  DATASET: BddDataset
+  DATA_FORMAT: jpg
+  FLIP: true
+  HSV_H: 0.015
+  HSV_S: 0.7
+  HSV_V: 0.4
+  LABELROOT: /home/kiara/Descargas/Data/det_annotations
+  LANEROOT: /home/kiara/Descargas/Data/ll_seg_anotations
+  MASKROOT: /home/kiara/Descargas/Data/colormaps
+  ORG_IMG_SIZE:
+  - 720
+  - 1280
+  ROT_FACTOR: 10
+  SCALE_FACTOR: 0.25
+  SELECT_DATA: false
+  SHEAR: 0.0
+  TEST_SET: val
+  TRAIN_SET: train
+  TRANSLATE: 0.1
+DEBUG: false
+GPUS:
+- 0
+- 1
+LOG_DIR: runs/
+LOSS:
+  BOX_GAIN: 0.05
+  CLS_GAIN: 0.5
+  CLS_POS_WEIGHT: 1.0
+  DA_SEG_GAIN: 0.2
+  FL_GAMMA: 0.0
+  LL_IOU_GAIN: 0.2
+  LL_SEG_GAIN: 0.2
+  LOSS_NAME: Loss
+  MULTI_HEAD_LAMBDA: null
+  OBJ_GAIN: 1.0
+  OBJ_POS_WEIGHT: 1.0
+  SEG_POS_WEIGHT: 1.0
+MODEL:
+  EXTRA: {}
+  HEADS_NAME:
+  - ''
+  IMAGE_SIZE:
+  - 640
+  - 640
+  NAME: yolop_for_drivable_area
+  PRETRAINED: ''
+  PRETRAINED_DET: ''
+  STRU_WITHSHARE: false
+NEED_AUTOANCHOR: true
+PIN_MEMORY: false
+PRINT_FREQ: 20
+TEST:
+  BATCH_SIZE_PER_GPU: 24
+  MODEL_FILE: yolop_for_drivable_area
+  NMS_CONF_THRESHOLD: 0.001
+  NMS_IOU_THRESHOLD: 0.6
+  PLOTS: true
+  SAVE_JSON: false
+  SAVE_TXT: false
+TRAIN:
+  ANCHOR_THRESHOLD: 4.0
+  BATCH_SIZE_PER_GPU: 24
+  BEGIN_EPOCH: 0
+  DET_ONLY: false
+  DRIVABLE_ONLY: true
+  ENC_DET_ONLY: false
+  ENC_SEG_ONLY: false
+  END_EPOCH: 10
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  IOU_THRESHOLD: 0.2
+  LANE_ONLY: false
+  LR0: 0.001
+  LRF: 0.2
+  MOMENTUM: 0.937
+  NESTEROV: true
+  OPTIMIZER: adam
+  PLOT: true
+  SEG_ONLY: false
+  SHUFFLE: true
+  VAL_FREQ: 1
+  WARMUP_BIASE_LR: 0.1
+  WARMUP_EPOCHS: 3.0
+  WARMUP_MOMENTUM: 0.8
+  WD: 0.0005
+WORKERS: 8
+num_seg_class: 2
+
