@@ -4,6 +4,7 @@ sys.path.append(BASE_DIR)
 from lib.config import cfg
 import torchvision.transforms as transforms
 import lib.dataset as dataset
+import json
 
 def main():
 
@@ -24,7 +25,8 @@ def main():
         ])
     )
 
-    print(type(train_dataset))
+    with open("./lib/dataset/train_dataset.json", "w") as final:
+        json.dump(train_dataset, final)
 
     valid_dataset = eval('dataset.' + cfg.DATASET.DATASET)(
             cfg=cfg,
@@ -36,7 +38,8 @@ def main():
             ])
         )
     
-    print(type(valid_dataset))
+    with open("./lib/dataset/valid_dataset.json", "w") as final:
+        json.dump(valid_dataset, final)
 
 if __name__ == '__main__':
     main()
