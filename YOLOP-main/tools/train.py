@@ -34,6 +34,7 @@ from lib.utils.utils import save_checkpoint
 from lib.utils.utils import create_logger, select_device
 from lib.utils import run_anchor
 
+import json
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train Multitask network')
@@ -254,19 +255,10 @@ def main():
 
     print("begin to load data")
     # Data loading
-    normalize = transforms.Normalize(
-        mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
-    )
 
-    train_dataset = eval('dataset.' + cfg.DATASET.DATASET)(
-        cfg=cfg,
-        is_train=True,
-        inputsize=cfg.MODEL.IMAGE_SIZE,
-        transform=transforms.Compose([
-            transforms.ToTensor(),
-            normalize,
-        ])
-    )
+    with open(r"./lib/dataset/train_dataset.json", "r") as read_file:
+        train_dataset = json.load(read_file)
+
     train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset) if rank != -1 else None
 
     train_loader = DataLoaderX(
@@ -281,15 +273,9 @@ def main():
     num_batch = len(train_loader)
 
     if rank in [-1, 0]:
-        valid_dataset = eval('dataset.' + cfg.DATASET.DATASET)(
-            cfg=cfg,
-            is_train=False,
-            inputsize=cfg.MODEL.IMAGE_SIZE,
-            transform=transforms.Compose([
-                transforms.ToTensor(),
-                normalize,
-            ])
-        )
+
+        with open(r"./lib/dataset/valid_dataset.json", "r") as read_file:
+            valid_dataset = json.load(read_file)
 
         valid_loader = DataLoaderX(
             valid_dataset,

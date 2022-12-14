@@ -6,6 +6,11 @@ import torchvision.transforms as transforms
 import lib.dataset as dataset
 import json
 
+
+def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)
+            
 def main():
 
 
@@ -25,8 +30,10 @@ def main():
         ])
     )
 
-    with open("./lib/dataset/train_dataset.json", "w") as final:
-        json.dump(train_dataset, final)
+
+    f = open('./lib/dataset/train_dataset.json', 'wb')
+    f.write(train_dataset.toJson())
+    print('train_dataset stored')
 
     valid_dataset = eval('dataset.' + cfg.DATASET.DATASET)(
             cfg=cfg,
@@ -38,8 +45,11 @@ def main():
             ])
         )
     
-    with open("./lib/dataset/valid_dataset.json", "w") as final:
-        json.dump(valid_dataset, final)
+    f = open('./lib/dataset/train_dataset.json', 'wb')
+    f.write(train_dataset.toJson())
+    print('valid_dataset stored')
+
+
 
 if __name__ == '__main__':
     main()
