@@ -1,0 +1,252 @@
+2022-12-14 16:44:35,771 Namespace(modelDir='', logDir='runs/', dataDir='', prevModelDir='', sync_bn=False, local_rank=-1, conf_thres=0.001, iou_thres=0.6)
+2022-12-14 16:44:35,771 AUTO_RESUME: True
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  COLOR_RGB: False
+  DATAROOT: /home/adri/Projects/Final_proyect_AMV/Data/images
+  DATASET: BddDataset
+  DATA_FORMAT: jpg
+  FLIP: True
+  HSV_H: 0.015
+  HSV_S: 0.7
+  HSV_V: 0.4
+  LABELROOT: /home/adri/Projects/Final_proyect_AMV/Data/det_seg_labels
+  LANEROOT: /home/adri/Projects/Final_proyect_AMV/Data/bdd_lane_gt
+  MASKROOT: /home/adri/Projects/Final_proyect_AMV/Data/labels/colormaps
+  ORG_IMG_SIZE: [720, 1280]
+  ROT_FACTOR: 10
+  SCALE_FACTOR: 0.25
+  SELECT_DATA: False
+  SHEAR: 0.0
+  TEST_SET: val
+  TRAIN_SET: train
+  TRANSLATE: 0.1
+DEBUG: False
+GPUS: (0, 1)
+LOG_DIR: runs/
+LOSS:
+  BOX_GAIN: 0.05
+  CLS_GAIN: 0.5
+  CLS_POS_WEIGHT: 1.0
+  DA_SEG_GAIN: 0.2
+  FL_GAMMA: 0.0
+  LL_IOU_GAIN: 0.2
+  LL_SEG_GAIN: 0.2
+  LOSS_NAME: 
+  MULTI_HEAD_LAMBDA: None
+  OBJ_GAIN: 1.0
+  OBJ_POS_WEIGHT: 1.0
+  SEG_POS_WEIGHT: 1.0
+MODEL:
+  EXTRA:
+    
+  HEADS_NAME: ['']
+  IMAGE_SIZE: [320, 320]
+  NAME: YOLOP for drivable road
+  PRETRAINED: 
+  PRETRAINED_DET: 
+  STRU_WITHSHARE: False
+NEED_AUTOANCHOR: True
+PIN_MEMORY: False
+PRINT_FREQ: 20
+TEST:
+  BATCH_SIZE_PER_GPU: 24
+  MODEL_FILE: 
+  NMS_CONF_THRESHOLD: 0.001
+  NMS_IOU_THRESHOLD: 0.6
+  PLOTS: True
+  SAVE_JSON: False
+  SAVE_TXT: False
+TRAIN:
+  ANCHOR_THRESHOLD: 4.0
+  BATCH_SIZE_PER_GPU: 12
+  BEGIN_EPOCH: 0
+  DET_ONLY: False
+  DRIVABLE_ONLY: True
+  ENC_DET_ONLY: False
+  ENC_SEG_ONLY: False
+  END_EPOCH: 10
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  IOU_THRESHOLD: 0.2
+  LANE_ONLY: False
+  LR0: 0.001
+  LRF: 0.2
+  MOMENTUM: 0.937
+  NESTEROV: True
+  OPTIMIZER: adam
+  PLOT: True
+  SEG_ONLY: False
+  SHUFFLE: True
+  VAL_FREQ: 1
+  WARMUP_BIASE_LR: 0.1
+  WARMUP_EPOCHS: 3.0
+  WARMUP_MOMENTUM: 0.8
+  WD: 0.0005
+WORKERS: 8
+num_seg_class: 2
+2022-12-14 16:44:35,773 Using torch 1.13.0+cu117 CPU
+2022-12-14 16:44:35,773 
+2022-12-14 16:44:35,899 freeze encoder and Det head and Ll_Seg heads...
+2022-12-14 16:44:48,760 begin check anchors
+2022-12-14 16:46:39,895 tensor([[[0.2832, 0.7939],
+         [0.4364, 1.2404],
+         [0.6888, 1.7024]],
+
+        [[0.5277, 1.3955],
+         [0.9170, 2.0434],
+         [1.3382, 3.5240]],
+
+        [[1.0391, 1.8332],
+         [1.3064, 3.1584],
+         [1.7197, 4.8595]]])
+2022-12-14 16:46:46,985 Epoch: [1][0/2917]	Time 7.088s (7.088s)	Speed 3.4 samples/s	Data 1.992s (1.992s)	Loss 0.14480 (0.14480)
+2022-12-14 16:47:34,408 Epoch: [1][20/2917]	Time 54.511s (30.692s)	Speed 0.4 samples/s	Data 51.976s (28.195s)	Loss 0.14471 (0.14481)
+2022-12-14 16:48:43,463 Epoch: [1][40/2917]	Time 123.566s (58.264s)	Speed 0.2 samples/s	Data 119.575s (55.304s)	Loss 0.14478 (0.14479)
+2022-12-14 16:49:51,126 Epoch: [1][60/2917]	Time 191.229s (91.785s)	Speed 0.1 samples/s	Data 188.321s (88.688s)	Loss 0.14473 (0.14476)
+2022-12-14 16:51:03,909 Epoch: [1][80/2917]	Time 264.013s (125.430s)	Speed 0.1 samples/s	Data 259.709s (122.201s)	Loss 0.14451 (0.14472)
+2022-12-14 16:52:30,191 Epoch: [1][100/2917]	Time 350.295s (161.690s)	Speed 0.1 samples/s	Data 346.065s (158.247s)	Loss 0.14429 (0.14466)
+2022-12-14 16:53:39,162 Epoch: [1][120/2917]	Time 419.265s (198.984s)	Speed 0.1 samples/s	Data 416.146s (195.541s)	Loss 0.14423 (0.14460)
+2022-12-14 16:54:48,762 Epoch: [1][140/2917]	Time 488.866s (235.276s)	Speed 0.0 samples/s	Data 485.508s (231.829s)	Loss 0.14431 (0.14453)
+2022-12-14 16:56:09,909 Epoch: [1][160/2917]	Time 570.013s (272.111s)	Speed 0.0 samples/s	Data 566.656s (268.589s)	Loss 0.14359 (0.14444)
+2022-12-14 16:57:34,004 Epoch: [1][180/2917]	Time 654.107s (309.965s)	Speed 0.0 samples/s	Data 650.400s (306.369s)	Loss 0.14321 (0.14434)
+2022-12-14 16:58:59,635 Epoch: [1][200/2917]	Time 739.739s (348.683s)	Speed 0.0 samples/s	Data 735.329s (345.020s)	Loss 0.14323 (0.14421)
+2022-12-14 17:00:22,222 Epoch: [1][220/2917]	Time 822.325s (387.924s)	Speed 0.0 samples/s	Data 817.935s (384.219s)	Loss 0.14232 (0.14408)
+2022-12-14 17:01:47,703 Epoch: [1][240/2917]	Time 907.806s (427.703s)	Speed 0.0 samples/s	Data 903.647s (423.951s)	Loss 0.14193 (0.14393)
+2022-12-14 17:02:55,071 Epoch: [1][260/2917]	Time 975.174s (467.464s)	Speed 0.0 samples/s	Data 972.454s (463.742s)	Loss 0.14207 (0.14380)
+2022-12-14 17:03:50,060 Epoch: [1][280/2917]	Time 1030.163s (505.656s)	Speed 0.0 samples/s	Data 1027.453s (502.004s)	Loss 0.14123 (0.14366)
+2022-12-14 17:04:45,103 Epoch: [1][300/2917]	Time 1085.206s (542.422s)	Speed 0.0 samples/s	Data 1082.431s (538.830s)	Loss 0.14190 (0.14354)
+2022-12-14 17:05:39,845 Epoch: [1][320/2917]	Time 1139.949s (578.034s)	Speed 0.0 samples/s	Data 1137.265s (574.495s)	Loss 0.14146 (0.14342)
+2022-12-14 17:06:34,879 Epoch: [1][340/2917]	Time 1194.982s (612.679s)	Speed 0.0 samples/s	Data 1192.200s (609.187s)	Loss 0.14223 (0.14332)
+2022-12-14 17:07:25,154 Epoch: [1][360/2917]	Time 1245.257s (646.477s)	Speed 0.0 samples/s	Data 1243.097s (643.040s)	Loss 0.14079 (0.14322)
+2022-12-14 17:08:09,975 Epoch: [1][380/2917]	Time 1290.078s (679.115s)	Speed 0.0 samples/s	Data 1287.505s (675.740s)	Loss 0.14157 (0.14313)
+2022-12-14 17:08:57,971 Epoch: [1][400/2917]	Time 1338.074s (710.822s)	Speed 0.0 samples/s	Data 1335.370s (707.496s)	Loss 0.14121 (0.14304)
+2022-12-14 17:09:52,215 Epoch: [1][420/2917]	Time 1392.318s (741.975s)	Speed 0.0 samples/s	Data 1389.579s (738.678s)	Loss 0.14186 (0.14296)
+2022-12-14 17:10:46,626 Epoch: [1][440/2917]	Time 1446.729s (772.765s)	Speed 0.0 samples/s	Data 1444.006s (769.495s)	Loss 0.14103 (0.14289)
+2022-12-14 17:11:32,406 Epoch: [1][460/2917]	Time 1492.509s (803.097s)	Speed 0.0 samples/s	Data 1490.339s (799.869s)	Loss 0.14139 (0.14281)
+2022-12-14 17:12:15,918 Epoch: [1][480/2917]	Time 1536.021s (832.713s)	Speed 0.0 samples/s	Data 1533.911s (829.529s)	Loss 0.14073 (0.14274)
+2022-12-14 17:13:01,652 Epoch: [1][500/2917]	Time 1581.755s (861.728s)	Speed 0.0 samples/s	Data 1579.258s (858.580s)	Loss 0.14104 (0.14268)
+2022-12-14 17:13:54,352 Epoch: [1][520/2917]	Time 1634.455s (890.418s)	Speed 0.0 samples/s	Data 1631.758s (887.290s)	Loss 0.14084 (0.14261)
+2022-12-14 17:14:48,430 Epoch: [1][540/2917]	Time 1688.533s (918.976s)	Speed 0.0 samples/s	Data 1685.811s (915.864s)	Loss 0.14138 (0.14255)
+2022-12-14 17:15:42,532 Epoch: [1][560/2917]	Time 1742.635s (947.426s)	Speed 0.0 samples/s	Data 1739.955s (944.329s)	Loss 0.14027 (0.14249)
+2022-12-14 17:16:28,484 Epoch: [1][580/2917]	Time 1788.588s (975.675s)	Speed 0.0 samples/s	Data 1786.510s (972.605s)	Loss 0.14073 (0.14244)
+2022-12-14 17:17:11,664 Epoch: [1][600/2917]	Time 1831.767s (1003.477s)	Speed 0.0 samples/s	Data 1829.553s (1000.438s)	Loss 0.14034 (0.14238)
+2022-12-14 17:17:57,241 Epoch: [1][620/2917]	Time 1877.344s (1030.911s)	Speed 0.0 samples/s	Data 1874.804s (1027.897s)	Loss 0.14072 (0.14233)
+2022-12-14 17:18:49,874 Epoch: [1][640/2917]	Time 1929.977s (1058.169s)	Speed 0.0 samples/s	Data 1927.233s (1055.167s)	Loss 0.14065 (0.14228)
+2022-12-14 17:19:43,901 Epoch: [1][660/2917]	Time 1984.004s (1085.405s)	Speed 0.0 samples/s	Data 1981.206s (1082.412s)	Loss 0.14060 (0.14223)
+2022-12-14 17:20:39,759 Epoch: [1][680/2917]	Time 2039.863s (1112.662s)	Speed 0.0 samples/s	Data 2037.243s (1109.676s)	Loss 0.14119 (0.14218)
+2022-12-14 17:21:23,576 Epoch: [1][700/2917]	Time 2083.679s (1139.778s)	Speed 0.0 samples/s	Data 2081.456s (1136.814s)	Loss 0.14032 (0.14213)
+2022-12-14 17:22:08,527 Epoch: [1][720/2917]	Time 2128.630s (1166.610s)	Speed 0.0 samples/s	Data 2126.279s (1163.666s)	Loss 0.14115 (0.14209)
+2022-12-14 17:22:59,700 Epoch: [1][740/2917]	Time 2179.804s (1193.282s)	Speed 0.0 samples/s	Data 2177.045s (1190.348s)	Loss 0.14095 (0.14204)
+2022-12-14 17:23:54,830 Epoch: [1][760/2917]	Time 2234.933s (1219.969s)	Speed 0.0 samples/s	Data 2232.244s (1217.040s)	Loss 0.14062 (0.14200)
+2022-12-14 17:24:49,493 Epoch: [1][780/2917]	Time 2289.596s (1246.697s)	Speed 0.0 samples/s	Data 2286.875s (1243.774s)	Loss 0.13990 (0.14196)
+2022-12-14 17:25:37,834 Epoch: [1][800/2917]	Time 2337.938s (1273.407s)	Speed 0.0 samples/s	Data 2335.832s (1270.496s)	Loss 0.14063 (0.14192)
+2022-12-14 17:26:22,729 Epoch: [1][820/2917]	Time 2382.832s (1299.907s)	Speed 0.0 samples/s	Data 2380.553s (1297.012s)	Loss 0.14000 (0.14188)
+2022-12-14 17:27:12,510 Epoch: [1][840/2917]	Time 2432.613s (1326.265s)	Speed 0.0 samples/s	Data 2429.929s (1323.380s)	Loss 0.14085 (0.14184)
+2022-12-14 17:28:06,669 Epoch: [1][860/2917]	Time 2486.772s (1352.624s)	Speed 0.0 samples/s	Data 2484.073s (1349.744s)	Loss 0.13993 (0.14180)
+2022-12-14 17:29:00,114 Epoch: [1][880/2917]	Time 2540.218s (1379.009s)	Speed 0.0 samples/s	Data 2537.590s (1376.133s)	Loss 0.14052 (0.14176)
+2022-12-14 17:29:48,511 Epoch: [1][900/2917]	Time 2588.614s (1405.362s)	Speed 0.0 samples/s	Data 2586.220s (1402.497s)	Loss 0.13961 (0.14173)
+2022-12-14 17:30:40,584 Epoch: [1][920/2917]	Time 2640.688s (1431.642s)	Speed 0.0 samples/s	Data 2638.037s (1428.783s)	Loss 0.13959 (0.14169)
+2022-12-14 17:31:35,955 Epoch: [1][940/2917]	Time 2696.059s (1457.958s)	Speed 0.0 samples/s	Data 2693.573s (1455.101s)	Loss 0.13952 (0.14166)
+2022-12-14 17:32:19,319 Epoch: [1][960/2917]	Time 2739.422s (1484.200s)	Speed 0.0 samples/s	Data 2737.248s (1481.357s)	Loss 0.13961 (0.14162)
+2022-12-14 17:33:04,536 Epoch: [1][980/2917]	Time 2784.639s (1510.270s)	Speed 0.0 samples/s	Data 2782.285s (1507.438s)	Loss 0.13986 (0.14159)
+2022-12-14 17:33:55,249 Epoch: [1][1000/2917]	Time 2835.353s (1536.246s)	Speed 0.0 samples/s	Data 2832.540s (1533.421s)	Loss 0.14052 (0.14155)
+2022-12-14 17:34:49,960 Epoch: [1][1020/2917]	Time 2890.064s (1562.257s)	Speed 0.0 samples/s	Data 2887.306s (1559.434s)	Loss 0.13961 (0.14152)
+2022-12-14 17:35:44,752 Epoch: [1][1040/2917]	Time 2944.856s (1588.320s)	Speed 0.0 samples/s	Data 2942.055s (1585.499s)	Loss 0.13921 (0.14148)
+2022-12-14 17:36:38,499 Epoch: [1][1060/2917]	Time 2998.603s (1614.436s)	Speed 0.0 samples/s	Data 2996.301s (1611.617s)	Loss 0.13922 (0.14145)
+2022-12-14 17:37:21,025 Epoch: [1][1080/2917]	Time 3041.128s (1640.460s)	Speed 0.0 samples/s	Data 3038.955s (1637.653s)	Loss 0.13928 (0.14141)
+2022-12-14 17:38:06,543 Epoch: [1][1100/2917]	Time 3086.647s (1666.330s)	Speed 0.0 samples/s	Data 3084.185s (1663.533s)	Loss 0.13960 (0.14138)
+2022-12-14 17:38:57,896 Epoch: [1][1120/2917]	Time 3137.999s (1692.134s)	Speed 0.0 samples/s	Data 3135.184s (1689.342s)	Loss 0.13901 (0.14135)
+2022-12-14 17:39:54,943 Epoch: [1][1140/2917]	Time 3195.047s (1718.002s)	Speed 0.0 samples/s	Data 3192.332s (1715.209s)	Loss 0.13968 (0.14132)
+2022-12-14 17:40:49,668 Epoch: [1][1160/2917]	Time 3249.771s (1743.942s)	Speed 0.0 samples/s	Data 3247.125s (1741.150s)	Loss 0.13960 (0.14129)
+2022-12-14 17:41:43,884 Epoch: [1][1180/2917]	Time 3303.987s (1769.933s)	Speed 0.0 samples/s	Data 3301.648s (1767.143s)	Loss 0.13977 (0.14125)
+2022-12-14 17:42:27,317 Epoch: [1][1200/2917]	Time 3347.421s (1795.860s)	Speed 0.0 samples/s	Data 3345.149s (1793.079s)	Loss 0.13966 (0.14122)
+2022-12-14 17:43:13,567 Epoch: [1][1220/2917]	Time 3393.671s (1821.669s)	Speed 0.0 samples/s	Data 3391.305s (1818.896s)	Loss 0.13953 (0.14119)
+2022-12-14 17:44:06,726 Epoch: [1][1240/2917]	Time 3446.829s (1847.446s)	Speed 0.0 samples/s	Data 3444.103s (1844.675s)	Loss 0.13985 (0.14116)
+2022-12-14 17:45:02,847 Epoch: [1][1260/2917]	Time 3502.950s (1873.281s)	Speed 0.0 samples/s	Data 3500.262s (1870.510s)	Loss 0.13900 (0.14113)
+2022-12-14 17:45:56,758 Epoch: [1][1280/2917]	Time 3556.861s (1899.167s)	Speed 0.0 samples/s	Data 3554.187s (1896.397s)	Loss 0.14005 (0.14110)
+2022-12-14 17:46:51,070 Epoch: [1][1300/2917]	Time 3611.173s (1925.091s)	Speed 0.0 samples/s	Data 3608.478s (1922.322s)	Loss 0.13905 (0.14108)
+2022-12-14 17:47:43,108 Epoch: [1][1320/2917]	Time 3663.211s (1951.027s)	Speed 0.0 samples/s	Data 3660.582s (1948.261s)	Loss 0.13892 (0.14105)
+2022-12-14 17:48:29,848 Epoch: [1][1340/2917]	Time 3709.952s (1976.949s)	Speed 0.0 samples/s	Data 3707.780s (1974.189s)	Loss 0.13839 (0.14102)
+2022-12-14 17:49:13,130 Epoch: [1][1360/2917]	Time 3753.233s (2002.747s)	Speed 0.0 samples/s	Data 3751.043s (1999.996s)	Loss 0.13912 (0.14099)
+2022-12-14 17:50:00,003 Epoch: [1][1380/2917]	Time 3800.107s (2028.446s)	Speed 0.0 samples/s	Data 3797.460s (2025.701s)	Loss 0.13926 (0.14096)
+2022-12-14 17:50:54,471 Epoch: [1][1400/2917]	Time 3854.574s (2054.133s)	Speed 0.0 samples/s	Data 3851.782s (2051.388s)	Loss 0.13865 (0.14093)
+2022-12-14 17:51:49,181 Epoch: [1][1420/2917]	Time 3909.284s (2079.877s)	Speed 0.0 samples/s	Data 3906.540s (2077.132s)	Loss 0.13883 (0.14091)
+2022-12-14 17:52:44,248 Epoch: [1][1440/2917]	Time 3964.351s (2105.669s)	Speed 0.0 samples/s	Data 3961.608s (2102.925s)	Loss 0.13910 (0.14088)
+2022-12-14 17:53:39,174 Epoch: [1][1460/2917]	Time 4019.277s (2131.509s)	Speed 0.0 samples/s	Data 4016.587s (2128.764s)	Loss 0.13840 (0.14085)
+2022-12-14 17:54:33,753 Epoch: [1][1480/2917]	Time 4073.857s (2157.391s)	Speed 0.0 samples/s	Data 4071.205s (2154.647s)	Loss 0.13884 (0.14083)
+2022-12-14 17:55:24,983 Epoch: [1][1500/2917]	Time 4125.087s (2183.289s)	Speed 0.0 samples/s	Data 4122.341s (2180.547s)	Loss 0.13887 (0.14080)
+2022-12-14 17:56:19,488 Epoch: [1][1520/2917]	Time 4179.591s (2209.195s)	Speed 0.0 samples/s	Data 4176.847s (2206.454s)	Loss 0.13869 (0.14077)
+2022-12-14 17:57:14,456 Epoch: [1][1540/2917]	Time 4234.560s (2235.144s)	Speed 0.0 samples/s	Data 4231.841s (2232.403s)	Loss 0.13872 (0.14075)
+2022-12-14 17:58:00,617 Epoch: [1][1560/2917]	Time 4280.720s (2261.089s)	Speed 0.0 samples/s	Data 4278.618s (2258.353s)	Loss 0.13851 (0.14072)
+2022-12-14 17:58:43,966 Epoch: [1][1580/2917]	Time 4324.069s (2286.920s)	Speed 0.0 samples/s	Data 4321.699s (2284.191s)	Loss 0.13822 (0.14069)
+2022-12-14 17:59:30,618 Epoch: [1][1600/2917]	Time 4370.721s (2312.669s)	Speed 0.0 samples/s	Data 4368.247s (2309.946s)	Loss 0.13838 (0.14066)
+2022-12-14 18:00:23,599 Epoch: [1][1620/2917]	Time 4423.703s (2338.401s)	Speed 0.0 samples/s	Data 4421.056s (2335.679s)	Loss 0.13836 (0.14063)
+2022-12-14 18:01:17,948 Epoch: [1][1640/2917]	Time 4478.051s (2364.163s)	Speed 0.0 samples/s	Data 4475.350s (2361.440s)	Loss 0.13826 (0.14061)
+2022-12-14 18:02:11,843 Epoch: [1][1660/2917]	Time 4531.947s (2389.958s)	Speed 0.0 samples/s	Data 4529.310s (2387.235s)	Loss 0.13762 (0.14058)
+2022-12-14 18:03:05,922 Epoch: [1][1680/2917]	Time 4586.025s (2415.780s)	Speed 0.0 samples/s	Data 4583.332s (2413.058s)	Loss 0.13880 (0.14056)
+2022-12-14 18:03:59,834 Epoch: [1][1700/2917]	Time 4639.937s (2441.629s)	Speed 0.0 samples/s	Data 4637.287s (2438.908s)	Loss 0.13876 (0.14053)
+2022-12-14 18:04:48,131 Epoch: [1][1720/2917]	Time 4688.234s (2467.480s)	Speed 0.0 samples/s	Data 4685.970s (2464.762s)	Loss 0.13813 (0.14050)
+2022-12-14 18:05:38,822 Epoch: [1][1740/2917]	Time 4738.926s (2493.290s)	Speed 0.0 samples/s	Data 4736.291s (2490.575s)	Loss 0.13875 (0.14047)
+2022-12-14 18:06:32,809 Epoch: [1][1760/2917]	Time 4792.912s (2519.116s)	Speed 0.0 samples/s	Data 4790.172s (2516.401s)	Loss 0.13755 (0.14045)
+2022-12-14 18:07:26,936 Epoch: [1][1780/2917]	Time 4847.039s (2544.969s)	Speed 0.0 samples/s	Data 4844.309s (2542.254s)	Loss 0.13792 (0.14042)
+2022-12-14 18:08:19,914 Epoch: [1][1800/2917]	Time 4900.018s (2570.846s)	Speed 0.0 samples/s	Data 4897.342s (2568.131s)	Loss 0.13772 (0.14039)
+2022-12-14 18:09:13,002 Epoch: [1][1820/2917]	Time 4953.105s (2596.737s)	Speed 0.0 samples/s	Data 4950.833s (2594.023s)	Loss 0.13776 (0.14037)
+2022-12-14 18:09:55,763 Epoch: [1][1840/2917]	Time 4995.866s (2622.581s)	Speed 0.0 samples/s	Data 4993.667s (2619.874s)	Loss 0.13817 (0.14034)
+2022-12-14 18:10:40,681 Epoch: [1][1860/2917]	Time 5040.784s (2648.338s)	Speed 0.0 samples/s	Data 5038.568s (2645.635s)	Loss 0.13875 (0.14032)
+2022-12-14 18:11:32,059 Epoch: [1][1880/2917]	Time 5092.162s (2674.054s)	Speed 0.0 samples/s	Data 5089.432s (2671.352s)	Loss 0.13762 (0.14029)
+2022-12-14 18:12:27,520 Epoch: [1][1900/2917]	Time 5147.623s (2699.802s)	Speed 0.0 samples/s	Data 5144.988s (2697.100s)	Loss 0.13810 (0.14027)
+2022-12-14 18:13:21,066 Epoch: [1][1920/2917]	Time 5201.169s (2725.580s)	Speed 0.0 samples/s	Data 5198.465s (2722.878s)	Loss 0.13749 (0.14024)
+2022-12-14 18:14:14,884 Epoch: [1][1940/2917]	Time 5254.987s (2751.381s)	Speed 0.0 samples/s	Data 5252.346s (2748.679s)	Loss 0.13816 (0.14022)
+2022-12-14 18:15:06,670 Epoch: [1][1960/2917]	Time 5306.773s (2777.200s)	Speed 0.0 samples/s	Data 5304.421s (2774.500s)	Loss 0.13779 (0.14019)
+2022-12-14 18:15:57,559 Epoch: [1][1980/2917]	Time 5357.662s (2803.002s)	Speed 0.0 samples/s	Data 5354.853s (2800.303s)	Loss 0.13782 (0.14016)
+2022-12-14 18:16:51,573 Epoch: [1][2000/2917]	Time 5411.677s (2828.821s)	Speed 0.0 samples/s	Data 5409.042s (2826.123s)	Loss 0.13683 (0.14014)
+2022-12-14 18:17:45,348 Epoch: [1][2020/2917]	Time 5465.451s (2854.662s)	Speed 0.0 samples/s	Data 5462.767s (2851.964s)	Loss 0.13755 (0.14011)
+2022-12-14 18:18:39,152 Epoch: [1][2040/2917]	Time 5519.255s (2880.523s)	Speed 0.0 samples/s	Data 5516.701s (2877.825s)	Loss 0.13751 (0.14009)
+2022-12-14 18:19:33,079 Epoch: [1][2060/2917]	Time 5573.183s (2906.404s)	Speed 0.0 samples/s	Data 5570.442s (2903.706s)	Loss 0.13711 (0.14006)
+2022-12-14 18:20:27,486 Epoch: [1][2080/2917]	Time 5627.590s (2932.309s)	Speed 0.0 samples/s	Data 5624.951s (2929.610s)	Loss 0.13693 (0.14004)
+2022-12-14 18:21:21,431 Epoch: [1][2100/2917]	Time 5681.534s (2958.235s)	Speed 0.0 samples/s	Data 5678.813s (2955.537s)	Loss 0.13680 (0.14001)
+2022-12-14 18:22:15,246 Epoch: [1][2120/2917]	Time 5735.350s (2984.182s)	Speed 0.0 samples/s	Data 5732.750s (2981.484s)	Loss 0.13727 (0.13998)
+2022-12-14 18:23:09,148 Epoch: [1][2140/2917]	Time 5789.251s (3010.147s)	Speed 0.0 samples/s	Data 5786.631s (3007.449s)	Loss 0.13731 (0.13996)
+2022-12-14 18:24:02,730 Epoch: [1][2160/2917]	Time 5842.834s (3036.129s)	Speed 0.0 samples/s	Data 5840.236s (3033.432s)	Loss 0.13780 (0.13993)
+2022-12-14 18:24:57,045 Epoch: [1][2180/2917]	Time 5897.149s (3062.129s)	Speed 0.0 samples/s	Data 5894.410s (3059.431s)	Loss 0.13715 (0.13991)
+2022-12-14 18:25:51,141 Epoch: [1][2200/2917]	Time 5951.245s (3088.149s)	Speed 0.0 samples/s	Data 5948.633s (3085.451s)	Loss 0.13716 (0.13988)
+2022-12-14 18:26:47,170 Epoch: [1][2220/2917]	Time 6007.273s (3114.190s)	Speed 0.0 samples/s	Data 6004.507s (3111.492s)	Loss 0.13652 (0.13986)
+2022-12-14 18:27:42,431 Epoch: [1][2240/2917]	Time 6062.534s (3140.270s)	Speed 0.0 samples/s	Data 6059.748s (3137.570s)	Loss 0.13650 (0.13983)
+2022-12-14 18:28:37,885 Epoch: [1][2260/2917]	Time 6117.988s (3166.377s)	Speed 0.0 samples/s	Data 6115.236s (3163.677s)	Loss 0.13715 (0.13980)
+2022-12-14 18:29:33,764 Epoch: [1][2280/2917]	Time 6173.868s (3192.514s)	Speed 0.0 samples/s	Data 6171.056s (3189.814s)	Loss 0.13683 (0.13978)
+2022-12-14 18:30:29,131 Epoch: [1][2300/2917]	Time 6229.234s (3218.682s)	Speed 0.0 samples/s	Data 6226.539s (3215.981s)	Loss 0.13626 (0.13975)
+2022-12-14 18:31:24,593 Epoch: [1][2320/2917]	Time 6284.696s (3244.875s)	Speed 0.0 samples/s	Data 6281.911s (3242.173s)	Loss 0.13613 (0.13972)
+2022-12-14 18:32:20,430 Epoch: [1][2340/2917]	Time 6340.533s (3271.095s)	Speed 0.0 samples/s	Data 6337.689s (3268.393s)	Loss 0.13745 (0.13970)
+2022-12-14 18:33:15,404 Epoch: [1][2360/2917]	Time 6395.508s (3297.345s)	Speed 0.0 samples/s	Data 6392.866s (3294.642s)	Loss 0.13625 (0.13967)
+2022-12-14 18:34:09,210 Epoch: [1][2380/2917]	Time 6449.313s (3323.606s)	Speed 0.0 samples/s	Data 6446.578s (3320.903s)	Loss 0.13683 (0.13965)
+2022-12-14 18:35:03,052 Epoch: [1][2400/2917]	Time 6503.156s (3349.878s)	Speed 0.0 samples/s	Data 6500.531s (3347.175s)	Loss 0.13554 (0.13962)
+2022-12-14 18:35:57,149 Epoch: [1][2420/2917]	Time 6557.252s (3376.162s)	Speed 0.0 samples/s	Data 6554.625s (3373.460s)	Loss 0.13634 (0.13959)
+2022-12-14 18:36:53,242 Epoch: [1][2440/2917]	Time 6613.345s (3402.471s)	Speed 0.0 samples/s	Data 6610.638s (3399.767s)	Loss 0.13638 (0.13957)
+2022-12-14 18:37:48,535 Epoch: [1][2460/2917]	Time 6668.639s (3428.801s)	Speed 0.0 samples/s	Data 6665.890s (3426.097s)	Loss 0.13631 (0.13954)
+2022-12-14 18:38:43,264 Epoch: [1][2480/2917]	Time 6723.368s (3455.149s)	Speed 0.0 samples/s	Data 6720.610s (3452.445s)	Loss 0.13602 (0.13951)
+2022-12-14 18:39:38,457 Epoch: [1][2500/2917]	Time 6778.560s (3481.516s)	Speed 0.0 samples/s	Data 6775.795s (3478.812s)	Loss 0.13526 (0.13949)
+2022-12-14 18:40:33,013 Epoch: [1][2520/2917]	Time 6833.116s (3507.901s)	Speed 0.0 samples/s	Data 6830.526s (3505.197s)	Loss 0.13572 (0.13946)
+2022-12-14 18:41:16,859 Epoch: [1][2540/2917]	Time 6876.962s (3534.257s)	Speed 0.0 samples/s	Data 6874.820s (3531.557s)	Loss 0.13568 (0.13943)
+2022-12-14 18:42:01,894 Epoch: [1][2560/2917]	Time 6921.997s (3560.545s)	Speed 0.0 samples/s	Data 6919.648s (3557.848s)	Loss 0.13533 (0.13941)
+2022-12-14 18:42:53,376 Epoch: [1][2580/2917]	Time 6973.480s (3586.799s)	Speed 0.0 samples/s	Data 6970.855s (3584.103s)	Loss 0.13617 (0.13938)
+2022-12-14 18:43:48,844 Epoch: [1][2600/2917]	Time 7028.947s (3613.064s)	Speed 0.0 samples/s	Data 7026.175s (3610.367s)	Loss 0.13630 (0.13935)
+2022-12-14 18:44:51,769 Epoch: [1][2620/2917]	Time 7091.872s (3639.384s)	Speed 0.0 samples/s	Data 7088.990s (3636.685s)	Loss 0.13504 (0.13933)
+2022-12-14 18:45:52,518 Epoch: [1][2640/2917]	Time 7152.622s (3665.764s)	Speed 0.0 samples/s	Data 7148.717s (3663.061s)	Loss 0.13593 (0.13930)
+2022-12-14 18:46:49,501 Epoch: [1][2660/2917]	Time 7209.605s (3692.199s)	Speed 0.0 samples/s	Data 7206.660s (3689.495s)	Loss 0.13632 (0.13927)
+2022-12-14 18:47:45,492 Epoch: [1][2680/2917]	Time 7265.595s (3718.660s)	Speed 0.0 samples/s	Data 7262.888s (3715.956s)	Loss 0.13529 (0.13925)
+2022-12-14 18:48:33,219 Epoch: [1][2700/2917]	Time 7313.323s (3745.117s)	Speed 0.0 samples/s	Data 7311.025s (3742.415s)	Loss 0.13564 (0.13922)
+2022-12-14 18:49:27,276 Epoch: [1][2720/2917]	Time 7367.380s (3771.559s)	Speed 0.0 samples/s	Data 7365.174s (3768.857s)	Loss 0.13571 (0.13920)
+2022-12-14 18:50:17,350 Epoch: [1][2740/2917]	Time 7417.453s (3797.983s)	Speed 0.0 samples/s	Data 7414.690s (3795.283s)	Loss 0.13590 (0.13917)
+2022-12-14 18:51:12,850 Epoch: [1][2760/2917]	Time 7472.954s (3824.413s)	Speed 0.0 samples/s	Data 7470.164s (3821.712s)	Loss 0.13546 (0.13914)
+2022-12-14 18:52:08,349 Epoch: [1][2780/2917]	Time 7528.452s (3850.861s)	Speed 0.0 samples/s	Data 7525.687s (3848.160s)	Loss 0.13550 (0.13912)
+2022-12-14 18:53:02,890 Epoch: [1][2800/2917]	Time 7582.994s (3877.325s)	Speed 0.0 samples/s	Data 7580.239s (3874.624s)	Loss 0.13575 (0.13909)
+2022-12-14 18:53:57,333 Epoch: [1][2820/2917]	Time 7637.437s (3903.800s)	Speed 0.0 samples/s	Data 7634.721s (3901.098s)	Loss 0.13555 (0.13907)
+2022-12-14 18:54:53,879 Epoch: [1][2840/2917]	Time 7693.982s (3930.292s)	Speed 0.0 samples/s	Data 7691.129s (3927.590s)	Loss 0.13523 (0.13904)
+2022-12-14 18:55:48,920 Epoch: [1][2860/2917]	Time 7749.023s (3956.803s)	Speed 0.0 samples/s	Data 7745.827s (3954.101s)	Loss 0.13610 (0.13901)
+2022-12-14 18:56:44,349 Epoch: [1][2880/2917]	Time 7804.453s (3983.336s)	Speed 0.0 samples/s	Data 7801.764s (3980.632s)	Loss 0.13456 (0.13899)
+2022-12-14 18:57:30,364 Epoch: [1][2900/2917]	Time 7850.468s (4009.856s)	Speed 0.0 samples/s	Data 7848.531s (4007.156s)	Loss 0.13518 (0.13896)
+2022-12-14 19:16:54,815 NumExpr defaulting to 8 threads.
