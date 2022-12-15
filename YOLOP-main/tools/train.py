@@ -148,87 +148,87 @@ def main():
         checkpoint_file = os.path.join(
             os.path.join(cfg.LOG_DIR, cfg.DATASET.DATASET), 'checkpoint.pth'
         )
-        # if os.path.exists(cfg.MODEL.PRETRAINED):
-        #     logger.info("=> loading model '{}'".format(cfg.MODEL.PRETRAINED))
-        #     checkpoint = torch.load(cfg.MODEL.PRETRAINED)
-        #     begin_epoch = checkpoint['epoch']
-        #     # best_perf = checkpoint['perf']
-        #     last_epoch = checkpoint['epoch']
-        #     model.load_state_dict(checkpoint['state_dict'])
-        #     optimizer.load_state_dict(checkpoint['optimizer'])
-        #     logger.info("=> loaded checkpoint '{}' (epoch {})".format(
-        #         cfg.MODEL.PRETRAINED, checkpoint['epoch']))
-        #     #cfg.NEED_AUTOANCHOR = False     #disable autoanchor
-        #
-        # if os.path.exists(cfg.MODEL.PRETRAINED_DET):
-        #     logger.info("=> loading model weight in det branch from '{}'".format(cfg.MODEL.PRETRAINED))
-        #     det_idx_range = [str(i) for i in range(0,25)]
-        #     model_dict = model.state_dict()
-        #     checkpoint_file = cfg.MODEL.PRETRAINED_DET
-        #     checkpoint = torch.load(checkpoint_file)
-        #     begin_epoch = checkpoint['epoch']
-        #     last_epoch = checkpoint['epoch']
-        #     checkpoint_dict = {k: v for k, v in checkpoint['state_dict'].items() if k.split(".")[1] in det_idx_range}
-        #     model_dict.update(checkpoint_dict)
-        #     model.load_state_dict(model_dict)
-        #     logger.info("=> loaded det branch checkpoint '{}' ".format(checkpoint_file))
-        #
-        # if cfg.AUTO_RESUME and os.path.exists(checkpoint_file):
-        #     logger.info("=> loading checkpoint '{}'".format(checkpoint_file))
-        #     checkpoint = torch.load(checkpoint_file)
-        #     begin_epoch = checkpoint['epoch']
-        #     # best_perf = checkpoint['perf']
-        #     last_epoch = checkpoint['epoch']
-        #     model.load_state_dict(checkpoint['state_dict'])
-        #     # optimizer = get_optimizer(cfg, model)
-        #     optimizer.load_state_dict(checkpoint['optimizer'])
-        #     logger.info("=> loaded checkpoint '{}' (epoch {})".format(
-        #         checkpoint_file, checkpoint['epoch']))
-        #     #cfg.NEED_AUTOANCHOR = False     #disable autoanchor
-        # # model = model.to(device)
+        if os.path.exists(cfg.MODEL.PRETRAINED):
+            logger.info("=> loading model '{}'".format(cfg.MODEL.PRETRAINED))
+            checkpoint = torch.load(cfg.MODEL.PRETRAINED)
+            begin_epoch = checkpoint['epoch']
+            # best_perf = checkpoint['perf']
+            last_epoch = checkpoint['epoch']
+            model.load_state_dict(checkpoint['state_dict'])
+            optimizer.load_state_dict(checkpoint['optimizer'])
+            logger.info("=> loaded checkpoint '{}' (epoch {})".format(
+                cfg.MODEL.PRETRAINED, checkpoint['epoch']))
+            #cfg.NEED_AUTOANCHOR = False     #disable autoanchor
 
-        # if cfg.TRAIN.SEG_ONLY:  #Only train two segmentation branchs
-        #     logger.info('freeze encoder and Det head...')
-        #     for k, v in model.named_parameters():
-        #         v.requires_grad = True  # train all layers
-        #         if k.split(".")[1] in Encoder_para_idx + Det_Head_para_idx:
-        #             print('freezing %s' % k)
-        #             v.requires_grad = False
-        #
-        # if cfg.TRAIN.DET_ONLY:  #Only train detection branch
-        #     logger.info('freeze encoder and two Seg heads...')
-        #     # print(model.named_parameters)
-        #     for k, v in model.named_parameters():
-        #         v.requires_grad = True  # train all layers
-        #         if k.split(".")[1] in Encoder_para_idx + Da_Seg_Head_para_idx + Ll_Seg_Head_para_idx:
-        #             print('freezing %s' % k)
-        #             v.requires_grad = False
-        #
-        # if cfg.TRAIN.ENC_SEG_ONLY:  # Only train encoder and two segmentation branchs
-        #     logger.info('freeze Det head...')
-        #     for k, v in model.named_parameters():
-        #         v.requires_grad = True  # train all layers
-        #         if k.split(".")[1] in Det_Head_para_idx:
-        #             print('freezing %s' % k)
-        #             v.requires_grad = False
-        #
-        # if cfg.TRAIN.ENC_DET_ONLY or cfg.TRAIN.DET_ONLY:    # Only train encoder and detection branchs
-        #     logger.info('freeze two Seg heads...')
-        #     for k, v in model.named_parameters():
-        #         v.requires_grad = True  # train all layers
-        #         if k.split(".")[1] in Da_Seg_Head_para_idx + Ll_Seg_Head_para_idx:
-        #             print('freezing %s' % k)
-        #             v.requires_grad = False
-        #
-        #
-        # if cfg.TRAIN.LANE_ONLY:
-        #     logger.info('freeze encoder and Det head and Da_Seg heads...')
-        #     # print(model.named_parameters)
-        #     for k, v in model.named_parameters():
-        #         v.requires_grad = True  # train all layers
-        #         if k.split(".")[1] in Encoder_para_idx + Da_Seg_Head_para_idx + Det_Head_para_idx:
-        #             print('freezing %s' % k)
-        #             v.requires_grad = False
+        if os.path.exists(cfg.MODEL.PRETRAINED_DET):
+            logger.info("=> loading model weight in det branch from '{}'".format(cfg.MODEL.PRETRAINED))
+            det_idx_range = [str(i) for i in range(0,25)]
+            model_dict = model.state_dict()
+            checkpoint_file = cfg.MODEL.PRETRAINED_DET
+            checkpoint = torch.load(checkpoint_file)
+            begin_epoch = checkpoint['epoch']
+            last_epoch = checkpoint['epoch']
+            checkpoint_dict = {k: v for k, v in checkpoint['state_dict'].items() if k.split(".")[1] in det_idx_range}
+            model_dict.update(checkpoint_dict)
+            model.load_state_dict(model_dict)
+            logger.info("=> loaded det branch checkpoint '{}' ".format(checkpoint_file))
+
+        if cfg.AUTO_RESUME and os.path.exists(checkpoint_file):
+            logger.info("=> loading checkpoint '{}'".format(checkpoint_file))
+            checkpoint = torch.load(checkpoint_file)
+            begin_epoch = checkpoint['epoch']
+            # best_perf = checkpoint['perf']
+            last_epoch = checkpoint['epoch']
+            model.load_state_dict(checkpoint['state_dict'])
+            # optimizer = get_optimizer(cfg, model)
+            optimizer.load_state_dict(checkpoint['optimizer'])
+            logger.info("=> loaded checkpoint '{}' (epoch {})".format(
+                checkpoint_file, checkpoint['epoch']))
+            #cfg.NEED_AUTOANCHOR = False     #disable autoanchor
+        # model = model.to(device)
+
+        if cfg.TRAIN.SEG_ONLY:  #Only train two segmentation branchs
+            logger.info('freeze encoder and Det head...')
+            for k, v in model.named_parameters():
+                v.requires_grad = True  # train all layers
+                if k.split(".")[1] in Encoder_para_idx + Det_Head_para_idx:
+                    print('freezing %s' % k)
+                    v.requires_grad = False
+
+        if cfg.TRAIN.DET_ONLY:  #Only train detection branch
+            logger.info('freeze encoder and two Seg heads...')
+            # print(model.named_parameters)
+            for k, v in model.named_parameters():
+                v.requires_grad = True  # train all layers
+                if k.split(".")[1] in Encoder_para_idx + Da_Seg_Head_para_idx + Ll_Seg_Head_para_idx:
+                    print('freezing %s' % k)
+                    v.requires_grad = False
+
+        if cfg.TRAIN.ENC_SEG_ONLY:  # Only train encoder and two segmentation branchs
+            logger.info('freeze Det head...')
+            for k, v in model.named_parameters():
+                v.requires_grad = True  # train all layers
+                if k.split(".")[1] in Det_Head_para_idx:
+                    print('freezing %s' % k)
+                    v.requires_grad = False
+
+        if cfg.TRAIN.ENC_DET_ONLY or cfg.TRAIN.DET_ONLY:    # Only train encoder and detection branchs
+            logger.info('freeze two Seg heads...')
+            for k, v in model.named_parameters():
+                v.requires_grad = True  # train all layers
+                if k.split(".")[1] in Da_Seg_Head_para_idx + Ll_Seg_Head_para_idx:
+                    print('freezing %s' % k)
+                    v.requires_grad = False
+
+
+        if cfg.TRAIN.LANE_ONLY:
+            logger.info('freeze encoder and Det head and Da_Seg heads...')
+            # print(model.named_parameters)
+            for k, v in model.named_parameters():
+                v.requires_grad = True  # train all layers
+                if k.split(".")[1] in Encoder_para_idx + Da_Seg_Head_para_idx + Det_Head_para_idx:
+                    print('freezing %s' % k)
+                    v.requires_grad = False
 
         if cfg.TRAIN.DRIVABLE_ONLY:
             logger.info('freeze encoder and Det head and Ll_Seg heads...')

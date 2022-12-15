@@ -9,7 +9,7 @@ _C.GPUS = (0,1)
 _C.WORKERS = 8
 _C.PIN_MEMORY = False
 _C.PRINT_FREQ = 20
-_C.AUTO_RESUME =False       # Resume from the last training interrupt
+_C.AUTO_RESUME =True       # Resume from the last training interrupt
 _C.NEED_AUTOANCHOR = True      # Re-select the prior anchor(k-means)    When training from scratch (epoch=0), set it to be ture!
 _C.DEBUG = False
 _C.num_seg_class = 2 # O 3 esta por ver
@@ -26,7 +26,7 @@ _C.MODEL = CN(new_allowed=True)
 _C.MODEL.NAME = 'yolop_for_drivable_area'
 _C.MODEL.STRU_WITHSHARE = False     #add share_block to segbranch
 _C.MODEL.HEADS_NAME = ['']
-_C.MODEL.PRETRAINED = ""
+_C.MODEL.PRETRAINED = "/content/drive/MyDrive/AML/Final_proyect/Project/amv_final_project/YOLOP-main/weights/yolop-320-320.onnx"
 _C.MODEL.PRETRAINED_DET = ""
 _C.MODEL.IMAGE_SIZE = [320, 320]  # width * height, ex: 192 * 256 Posible cambio
 _C.MODEL.EXTRA = CN(new_allowed=True)
