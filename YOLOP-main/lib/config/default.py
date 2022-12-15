@@ -127,7 +127,7 @@ _C.TEST.NMS_CONF_THRESHOLD  = 0.001
 _C.TEST.NMS_IOU_THRESHOLD  = 0.6
 
 
-def update_config(cfg, args):
+def update_config(cfg, args = None):
     cfg.defrost()
     # cfg.merge_from_file(args.cfg)
 
