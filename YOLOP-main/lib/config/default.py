@@ -28,7 +28,7 @@ _C.MODEL.STRU_WITHSHARE = False     #add share_block to segbranch
 _C.MODEL.HEADS_NAME = ['']
 _C.MODEL.PRETRAINED = ""
 _C.MODEL.PRETRAINED_DET = ""
-_C.MODEL.IMAGE_SIZE = [640, 640]  # width * height, ex: 192 * 256 Posible cambio
+_C.MODEL.IMAGE_SIZE = [320, 320]  # width * height, ex: 192 * 256 Posible cambio
 _C.MODEL.EXTRA = CN(new_allowed=True)
 
 
