@@ -9,6 +9,10 @@ single_cls = True       # just detect vehicle
 
 class BddDataset(AutoDriveDataset):
 
+    def __init__(self, cfg, is_train, inputsize, transform=None):
+        super().__init__(cfg, is_train, inputsize, transform)
+        self.db = self._get_db()
+        self.cfg = cfg
 
     def set_db(self, db):
         self.db = db

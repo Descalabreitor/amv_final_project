@@ -15,7 +15,7 @@ class AutoDriveDataset(Dataset):
     """
     A general Dataset for some common function
     """
-    def __init__(self, cfg = None, is_train= None, inputsize=640, transform=None, initialize = False):
+    def __init__(self, cfg, is_train, inputsize=640, transform=None):
         """
         initial all the characteristic
 
@@ -27,38 +27,37 @@ class AutoDriveDataset(Dataset):
         Returns:
         None
         """
-        if initialize:
-            self.is_train = is_train
-            self.cfg = cfg
-            self.transform = transform
-            self.inputsize = inputsize
-            self.Tensor = transforms.ToTensor()
-            img_root = Path(cfg.DATASET.DATAROOT)
-            label_root = Path(cfg.DATASET.LABELROOT)
-            mask_root = Path(cfg.DATASET.MASKROOT)
-            lane_root = Path(cfg.DATASET.LANEROOT)
-            if is_train:
-                indicator = cfg.DATASET.TRAIN_SET
-            else:
-                indicator = cfg.DATASET.TEST_SET
-            self.img_root = img_root / indicator
-            self.label_root = label_root / indicator
-            self.mask_root = mask_root / indicator
-            self.lane_root = lane_root / indicator
-            # self.label_list = self.label_root.iterdir()
-            self.mask_list = self.mask_root.iterdir()
+        self.is_train = is_train
+        self.cfg = cfg
+        self.transform = transform
+        self.inputsize = inputsize
+        self.Tensor = transforms.ToTensor()
+        img_root = Path(cfg.DATASET.DATAROOT)
+        label_root = Path(cfg.DATASET.LABELROOT)
+        mask_root = Path(cfg.DATASET.MASKROOT)
+        lane_root = Path(cfg.DATASET.LANEROOT)
+        if is_train:
+            indicator = cfg.DATASET.TRAIN_SET
+        else:
+            indicator = cfg.DATASET.TEST_SET
+        self.img_root = img_root / indicator
+        self.label_root = label_root / indicator
+        self.mask_root = mask_root / indicator
+        self.lane_root = lane_root / indicator
+        # self.label_list = self.label_root.iterdir()
+        self.mask_list = self.mask_root.iterdir()
 
-            self.db = []
+        self.db = []
 
-            self.data_format = cfg.DATASET.DATA_FORMAT
+        self.data_format = cfg.DATASET.DATA_FORMAT
 
-            self.scale_factor = cfg.DATASET.SCALE_FACTOR
-            self.rotation_factor = cfg.DATASET.ROT_FACTOR
-            self.flip = cfg.DATASET.FLIP
-            self.color_rgb = cfg.DATASET.COLOR_RGB
+        self.scale_factor = cfg.DATASET.SCALE_FACTOR
+        self.rotation_factor = cfg.DATASET.ROT_FACTOR
+        self.flip = cfg.DATASET.FLIP
+        self.color_rgb = cfg.DATASET.COLOR_RGB
 
-            # self.target_type = cfg.MODEL.TARGET_TYPE
-            self.shapes = np.array(cfg.DATASET.ORG_IMG_SIZE)
+        # self.target_type = cfg.MODEL.TARGET_TYPE
+        self.shapes = np.array(cfg.DATASET.ORG_IMG_SIZE)
     
     def _get_db(self):
         """
