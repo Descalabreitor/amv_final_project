@@ -8,9 +8,17 @@ from tqdm import tqdm
 single_cls = True       # just detect vehicle
 
 class BddDataset(AutoDriveDataset):
-    def __init__(self, cfg, is_train, inputsize, transform=None):
-        super().__init__(cfg, is_train, inputsize, transform)
-        self.db = self._get_db()
+
+    def __init__(self, cfg = None, is_train = None, inputsize = None , transform=None, calculate_bdd = False):
+        if calculate_bdd:
+            super().__init__(cfg, is_train, inputsize, transform)
+            self.db = self._get_db()
+            self.cfg = cfg
+
+    def set_db(self, db):
+        self.db = db
+
+    def set_cfg(self, cfg):
         self.cfg = cfg
 
     def _get_db(self):

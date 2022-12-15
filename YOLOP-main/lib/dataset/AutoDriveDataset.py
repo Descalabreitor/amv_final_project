@@ -15,7 +15,7 @@ class AutoDriveDataset(Dataset):
     """
     A general Dataset for some common function
     """
-    def __init__(self, cfg, is_train, inputsize=640, transform=None):
+    def __init__(self, cfg = None, is_train= None, inputsize=640, transform=None):
         """
         initial all the characteristic
 
